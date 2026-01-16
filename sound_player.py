@@ -1,5 +1,6 @@
 import pygame
 import os
+import time
 
 class SoundPlayer:
     def __init__(self,sound_folder="sounds"):
@@ -27,6 +28,7 @@ class SoundPlayer:
         
         volume = max(0.0,min(volume,1.0))
         self.sounds[drum_name].set_volume(volume)
+        time.sleep(0.4)
         self.sounds[drum_name].play()
 
     def stop_all(self):
