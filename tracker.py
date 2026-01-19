@@ -19,7 +19,7 @@ class StickTracker:
 
         if not contours:
             return None, mask
-        
+        0
         largest = max(contours, key=cv2.contourArea)
 
         if cv2.contourArea(largest) < MIN_AREA:
