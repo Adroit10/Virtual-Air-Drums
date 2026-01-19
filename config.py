@@ -5,11 +5,11 @@ CAMERA_INDEX = 0
 
 # HSV color range for the stick tip (example: green)
 # You will fine-tune these after testing
-LOWER_COLOR = np.array([35, 100, 100])
+LOWER_COLOR = np.array([35, 70, 70])
 UPPER_COLOR = np.array([85, 255, 255])
 
 # Minimum contour area to be considered as stick
-MIN_AREA = 500
+MIN_AREA = 30
 
 # Drum Zones (x, y, width, height)
 DRUMS = {

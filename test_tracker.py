@@ -19,13 +19,17 @@ while True:
 
     frame = cv2.flip(frame,1)
 
-    position,mask = tracker.detect(frame)
+    position,speed,mask = tracker.detect(frame)
+
+    cv2.putText(frame,f"Speed: {speed:.2f}",(10,30),
+                    cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
 
     if position:
         cx,cy = position
         cv2.circle(frame,(cx,cy),10,(0,0,255),-1)
-        cv2.putText(frame,f"({cx},{cy})",(cx+10,cy),
-                    cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,255),2)
+        cv2.putText(frame, f"({cx},{cy})", (cx+10, cy),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 2)
+        
     cv2.imshow("Stick Tracker",frame)
     cv2.imshow("Mask",mask)
 
